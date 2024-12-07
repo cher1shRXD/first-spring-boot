@@ -7,12 +7,8 @@ import me.cher1shrxd.firstspringboot.domain.board.dto.WriteRequest;
 import me.cher1shrxd.firstspringboot.domain.board.entity.BoardEntity;
 import me.cher1shrxd.firstspringboot.domain.board.repository.BoardRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpStatusCodeException;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -43,5 +39,10 @@ public class BoardService {
         if(updateRequest.title() != null) boardEntity.setTitle(updateRequest.title());
         if(updateRequest.detail() != null) boardEntity.setDetail(updateRequest.detail());
         boardRepository.save(boardEntity);
+    }
+
+    public PostResponse getPostById(Long id) {
+        BoardEntity boardEntity = boardRepository.findById(id).orElseThrow(RuntimeException::new);
+        return PostResponse.of(boardEntity);
     }
 }

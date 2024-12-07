@@ -25,6 +25,11 @@ public class BoardController {
         return boardService.getPosts();
     }
 
+    @GetMapping("/{id}")
+    public PostResponse getPostById(@PathVariable("id") Long id) {
+        return boardService.getPostById(id);
+    }
+
     @DeleteMapping("/{id}")
     public void deletePost(@PathVariable("id") Long id) {
         boardService.deletePost(id);
