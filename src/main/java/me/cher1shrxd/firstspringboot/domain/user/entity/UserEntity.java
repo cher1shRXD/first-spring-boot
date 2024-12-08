@@ -1,4 +1,4 @@
-package me.cher1shrxd.firstspringboot.domain.auth.entity;
+package me.cher1shrxd.firstspringboot.domain.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
