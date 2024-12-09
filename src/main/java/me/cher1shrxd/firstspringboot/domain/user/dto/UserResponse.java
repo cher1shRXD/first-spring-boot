@@ -15,6 +15,7 @@ public class UserResponse {
     private Long id;
     private String username;
     private String email;
+    private String nickname;
     private UserRole role;
 
     public UserResponse toUser(UserEntity userEntity){
@@ -22,6 +23,7 @@ public class UserResponse {
                 .email(userEntity.getEmail())
                 .username(userEntity.getUsername())
                 .role(userEntity.getRole())
+                .nickname(userEntity.getNickname())
                 .build();
     }
 }

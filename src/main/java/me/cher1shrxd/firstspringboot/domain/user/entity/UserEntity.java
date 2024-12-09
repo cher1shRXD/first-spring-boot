@@ -3,11 +3,13 @@ package me.cher1shrxd.firstspringboot.domain.user.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import me.cher1shrxd.firstspringboot.domain.auth.enums.UserRole;
 
 @Entity
 @Getter
+@Setter
 @SuperBuilder
 @NoArgsConstructor
 @Table(name = "users")
@@ -21,6 +23,9 @@ public class UserEntity {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
+    private String nickname;
 
     @Column(nullable = false)
     private String password;

@@ -8,6 +8,7 @@ import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
+@Setter
 @SuperBuilder
 @NoArgsConstructor
 @Table(name = "boards")
@@ -17,11 +18,9 @@ public class BoardEntity {
     private Long id;
 
     @Column(nullable = false)
-    @Setter
     private String title;
 
     @Column(nullable = false)
-    @Setter
     private String detail;
 
     @Column(nullable = false)
